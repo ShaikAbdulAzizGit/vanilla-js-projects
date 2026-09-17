@@ -24,14 +24,12 @@ function add_elements(data) {
 async function get_data() {
     const response = await fetch('https://randomuser.me/api?results=50')
     const data = await response.json()
-    // console.log(data)
     add_elements(data.results)
     
 }
 
 function filter_user(user_input){
     random_users=users_list.querySelectorAll('li')
-    console.log(random_users)
     random_users.forEach(user => {
         inner_text=user.innerText
         if(inner_text.toLowerCase().includes(user_input.toLowerCase())){
